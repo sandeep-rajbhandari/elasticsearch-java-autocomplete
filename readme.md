@@ -1,4 +1,4 @@
-**elasticsearch-java-autocomplete**
+**Elasticsearch-java-autocomplete**
 
 _Accoding to wikipedia_
 
@@ -77,3 +77,5 @@ _Refrences_
 https://hackernoon.com/elasticsearch-building-autocomplete-functionality-494fcf81a7cf
 
 https://qbox.io/blog/introduction-to-elasticsearch-analyzers
+
+https://www.elastic.co
