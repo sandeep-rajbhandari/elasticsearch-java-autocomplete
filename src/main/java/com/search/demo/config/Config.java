@@ -9,15 +9,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
-import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
-import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
-
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 @Configuration
-@EnableElasticsearchRepositories("com.search.demo.repository")
 @ComponentScan(basePackages = { "com.search.demo" })
 public class Config {
 
@@ -37,7 +32,6 @@ public class Config {
             final Settings elasticsearchSettings = Settings.builder()
                     .put("cluster.name", clusterName)
                     .put("client.transport.sniff", true)
-                    .put("xpack.security.user", "4q4coyezvp:h32007au1w")
                     .build();
 
             client = new PreBuiltXPackTransportClient(elasticsearchSettings);
@@ -50,11 +44,6 @@ public class Config {
             throw new RuntimeException(ex);
         }
         return client;
-    }
-
-    @Bean
-    public ElasticsearchOperations elasticsearchTemplate() {
-        return new ElasticsearchTemplate(client());
     }
 
 
