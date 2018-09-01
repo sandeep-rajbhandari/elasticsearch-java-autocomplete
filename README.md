@@ -1,1 +1,0 @@
-# elasticsearch-java-autocomplete
